@@ -1,0 +1,4 @@
+docker_version: "19.03.5"
+docker_baseurl: "https://download.docker.com/linux/centos/7/$basearch/stable"
+docker_gpgcheck: yes
+docker_gpgkey: "https://download.docker.com/linux/centos/gpg"

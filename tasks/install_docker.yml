@@ -1,0 +1,19 @@
+---
+- name: Add Yum repositorys
+  yum_repository:
+      name: docker
+      description: Docker official YUM repo
+      baseurl: "{{ docker_baseurl }}"
+      gpgcheck: "{{ docker_gpgcheck }}"
+      gpgkey: "{{ docker_gpgkey }}"
+
+- name: Ensure Docker is installed
+  package:
+    name: docker-ce-{{ docker_version }}
+    state: present
+
+- name: Start Docker service
+  service:
+    name: docker
+    state: started
+    enabled: yes
